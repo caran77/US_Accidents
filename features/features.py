@@ -2,7 +2,8 @@ import numpy as np
 import pandas as pd
 
 
-def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
+def prepare_dataset(df: pd.DataFrame, df_states: pd.DataFrame) -> pd.DataFrame:
+    df = pd.merge(df, df_states, how="left", on=["State"])
     df = prepare_affected_area(df)
     df = affected_area_category(df)
     df = distance_category(df)
