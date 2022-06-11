@@ -10,7 +10,7 @@ def main():
         df_states = get_states()
         df = get_accidents_dataset()
         df = prepare_dataset(df, df_states)
-        # export_dataset_grouped_by_year(df)
+        export_dataset_grouped_by_year(df)
         export_black_points_by_year(df)
         export_dataset(df)
     except:
